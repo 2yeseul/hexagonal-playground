@@ -11,7 +11,7 @@ data class ActivityWindow(
     fun getEndTimestamp(): LocalDateTime =
         activities.last().timestamp
 
-    fun calculateBalance(accountId: AccountId): Money =
+    fun calculateBalance(accountId: Long): Money =
         Money.add(
             activities
                 .filter { it.targetAccountId.equals(accountId) }
